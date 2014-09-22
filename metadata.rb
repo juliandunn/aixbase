@@ -1,0 +1,10 @@
+name             'aixtest'
+maintainer       'Chef Software, Inc.'
+maintainer_email 'jdunn@getchef.com'
+license          'Apache 2.0'
+description      'Working test harness cookbook for AIX'
+long_description 'Test harness cookbook for AIX'
+version          '0.1.0'
+
+depends 'aix'
+supports 'aix', '>= 6.1'
