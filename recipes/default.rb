@@ -25,9 +25,21 @@ aix_inittab 'webserverstart' do
   action :remove
 end
 
-aix_inittab 'chef' do
-  runlevel '2'
-  processaction 'once'
-  command '/opt/chef/bin/chef-client -d > /dev/console 2>&1'
-  action :install
+#aix_inittab 'chef' do
+#  runlevel '2'
+#  processaction 'once'
+#  command '/opt/chef/bin/chef-client -d > /dev/console 2>&1'
+#  action :install
+#end
+
+%w(inetd snmpd hostmibd snmpmibd aixmibd writesrv qdaemon).each do |tcpsrv|
+  aix_tcpservice tcpsrv do
+    immediate true
+    action :disable
+  end
+end
+
+aix_tcpservice 'xntpd' do
+  immediate true
+  action :enable
 end
