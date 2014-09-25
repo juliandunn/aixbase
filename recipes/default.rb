@@ -25,6 +25,9 @@ aix_inittab 'webserverstart' do
   action :remove
 end
 
+# Replaced by direct support in chef-client cookbook, but
+# here's an illustration of a custom command for the inittab
+
 #aix_inittab 'chef' do
 #  runlevel '2'
 #  processaction 'once'
@@ -42,4 +45,14 @@ end
 aix_tcpservice 'xntpd' do
   immediate true
   action :enable
+end
+
+aix_subserver 'telnet' do
+  protocol 'tcp'
+  action :disable
+end
+
+aix_subserver 'ftp' do
+  protocol 'tcp'
+  action :disable
 end
