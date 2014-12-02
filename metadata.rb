@@ -1,9 +1,9 @@
-name             'aixtest'
+name             'aixbase'
 maintainer       'Chef Software, Inc.'
-maintainer_email 'jdunn@getchef.com'
+maintainer_email 'jdunn@chef.io'
 license          'Apache 2.0'
-description      'Working test harness cookbook for AIX'
-long_description 'Test harness cookbook for AIX'
+description      'Base cookbook for running AIX systems'
+long_description 'Base cookbook for running AIX systems'
 version          '0.1.0'
 
 depends 'aix'
