@@ -17,12 +17,10 @@
 # limitations under the License.
 #
 
-aix_toolboxpackage 'unzip' do
-  action :install
-end
-
-aix_toolboxpackage 'less' do
-  action :install
+%w(unzip less bash).each do |pkg|
+  aix_toolboxpackage pkg do
+    action :install
+  end
 end
 
 aix_inittab 'webserverstart' do
