@@ -17,6 +17,10 @@
 # limitations under the License.
 #
 
+aix_toolboxpackage 'unzip' do
+  action :install
+end
+
 aix_toolboxpackage 'less' do
   action :install
 end
