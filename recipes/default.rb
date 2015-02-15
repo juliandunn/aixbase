@@ -58,3 +58,9 @@ aix_subserver 'ftp' do
   protocol 'tcp'
   action :disable
 end
+
+# Disable root logins - must su
+execute 'chuser login=false root' do
+  only_if 'lsuser -a login root | grep true'
+  action :run
+end
