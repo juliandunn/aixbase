@@ -1,0 +1,209 @@
+[?1034h[34m[1mborkbork(B[m [1m~/devel/gh/juliandunn/aixbase(B[m [35m((B[m[32mmaster *%[35m)(B[m$ kitchen c[Ktest
+-----> Starting Kitchen (v1.4.2)
+[36m-----> Cleaning up any prior instances of <default-aix-71>[0m
+[36m-----> Destroying <default-aix-71>...[0m
+[36m       Finished destroying <default-aix-71> (0m0.00s).[0m
+[36m-----> Testing <default-aix-71>[0m
+[36m-----> Creating <default-aix-71>...[0m
+D, [2016-01-14T00:38:49.451775 #64450] DEBUG -- : [SSH] opening connection to root@172.31.10.23:22<{:password=>"fake", :compression=>"none"}>
+I, [2016-01-14T00:38:50.730891 #64450]  INFO -- : Invoking command hostname
+I, [2016-01-14T00:38:50.944771 #64450]  INFO -- : Invoking command sudo mkwpar -n nope -w -o /tmp/nope; grep uuid /tmp/nope | cut -d'=' -f2
+I, [2016-01-14T00:38:51.541676 #64450]  INFO -- : Invoking command lswpar -c
+I, [2016-01-14T00:38:51.855522 #64450]  INFO -- : Invoking command ifconfig -a
+I, [2016-01-14T00:38:52.052302 #64450]  INFO -- : Invoking command /usr/bin/expect -c 'set timeout -1;spawn -noecho mkwpar -h sink-aix-7-powerpc-thinker-658cc4.chef-intranet.fake -n sink-thinker-658cc4 -N interface=en0 address=172.31.10.165 netmask=255.255.252.0 broadcast=172.31.11.255 -I rtdest=0.0.0.0 rtgateway=172.31.8.1 rtinterface=en0 -r -o /tmp/sink-thinker-658cc4.config -l -g scratchvg -U 658cc44b-e610-403c-b698-642f69da0768 -M directory=/ mountopts=log=NULL -M directory=/home mountopts=log=NULL -M directory=/opt mountopts=log=NULL -M directory=/tmp mountopts=log=NULL -M directory=/usr mountopts=log=NULL -M directory=/var mountopts=log=NULL;interact';startwpar sink-thinker-658cc4;
+I, [2016-01-14T00:43:55.390816 #64450]  INFO -- : Invoking command 
+          clogin sink-thinker-658cc4 "lssrc -s sshd";
+        
+I, [2016-01-14T00:44:00.909184 #64450]  INFO -- : Invoking command 
+          clogin sink-thinker-658cc4 "lssrc -s sshd";
+        
+I, [2016-01-14T00:44:06.152981 #64450]  INFO -- : Invoking command 
+          clogin sink-thinker-658cc4 "lssrc -s sshd";
+        
+I, [2016-01-14T00:44:11.371907 #64450]  INFO -- : Invoking command 
+          clogin sink-thinker-658cc4 "lssrc -s sshd";
+        
+I, [2016-01-14T00:44:16.592895 #64450]  INFO -- : Invoking command 
+          clogin sink-thinker-658cc4 "lssrc -s sshd";
+        
+I, [2016-01-14T00:44:21.808141 #64450]  INFO -- : Invoking command 
+          clogin sink-thinker-658cc4 "lssrc -s sshd";
+        
+I, [2016-01-14T00:44:27.025915 #64450]  INFO -- : Invoking command 
+          clogin sink-thinker-658cc4 "lssrc -s sshd";
+        
+I, [2016-01-14T00:44:32.250127 #64450]  INFO -- : Invoking command 
+          clogin sink-thinker-658cc4 "lssrc -s sshd";
+        
+I, [2016-01-14T00:44:37.467230 #64450]  INFO -- : Invoking command 
+          clogin sink-thinker-658cc4 "lssrc -s sshd";
+        
+I, [2016-01-14T00:44:42.688288 #64450]  INFO -- : Invoking command 
+          clogin sink-thinker-658cc4 "lssrc -s sshd";
+        
+I, [2016-01-14T00:44:47.911230 #64450]  INFO -- : Invoking command 
+          clogin sink-thinker-658cc4 "lssrc -s sshd";
+        
+I, [2016-01-14T00:44:48.266553 #64450]  INFO -- : Invoking command /usr/bin/expect -c 'set timeout -1;
+        spawn -noecho clogin sink-thinker-658cc4 "passwd root";
+        while true {
+          expect "password:" {
+            send "fake";
+          };
+          expect "again:" {
+            send "fake";
+            expect eof;
+          };
+        };'
+I, [2016-01-14T00:44:48.550209 #64450]  INFO -- : Invoking command 
+            clogin sink-thinker-658cc4 "chsec -f /etc/security/limits -s default -a "rss=-1"";
+            clogin sink-thinker-658cc4 "chsec -f /etc/security/limits -s default -a "core=-1"";
+            clogin sink-thinker-658cc4 "chsec -f /etc/security/limits -s default -a "data=-1"";
+            chfs -a size=1G /wpars/sink-thinker-658cc4/tmp/;
+            chfs -a size=2G /wpars/sink-thinker-658cc4/home/;
+        
+I, [2016-01-14T00:44:54.063313 #64450]  INFO -- : Invoking command lswpar -q -c -d'|' -a state,name sink-thinker-658cc4 sink-thinker-658cc4
+I, [2016-01-14T00:44:54.421091 #64450]  INFO -- : Invoking command lswpar -q -c -d'|' -a state,name sink-thinker-658cc4 sink-thinker-658cc4
+[36m       Finished creating <default-aix-71> (6m5.26s).[0m
+[36m-----> Converging <default-aix-71>...[0m
+[36m       Preparing files for transfer[0m
+[36m       Preparing dna.json[0m
+[36m       Resolving cookbook dependencies with Berkshelf 4.0.1...[0m
+[36m       Removing non-cookbook files before transfer[0m
+[36m       Preparing validation.pem[0m
+[36m       Preparing client.rb[0m
+[36m-----> Installing Chef Omnibus (12.6.0)[0m
+[36m       Downloading https://www.chef.io/chef/install.sh to file /tmp/install.sh[0m
+[36m       Trying wget...[0m
+[36m       Download complete.[0m
+[36m       Getting information for chef stable 12.6.0 for aix...[0m
+[36m       downloading https://omnitruck-direct.chef.io/stable/chef/metadata?v=12.6.0&p=aix&pv=7.1&m=powerpc[0m
+[36m         to file /tmp/install.sh.10617006/metadata.txt[0m
+[36m       trying wget...[0m
+[36m       url     https://opscode-omnibus-packages.s3.amazonaws.com/aix/7.1/powerpc/chef-12.6.0-1.powerpc.bff[0m
+[36m       md5     9192c44c2bdd5dc9d3c51064c0d293ec[0m
+[36m       sha256  c6d7e9580223082cff5ff13a0ad21db4e86f5549bc2475d11ea7e1e4a2c4e0fc[0m
+[36m       downloaded metadata file looks valid...[0m
+[36m       downloading https://opscode-omnibus-packages.s3.amazonaws.com/aix/7.1/powerpc/chef-12.6.0-1.powerpc.bff[0m
+[36m         to file /tmp/install.sh.10617006/chef-12.6.0-1.powerpc.bff[0m
+[36m       trying wget...[0m
+[36m       Comparing checksum with shasum...[0m
+[36m       Installing chef 12.6.0[0m
+[36m       installing with installp...[0m
+[36m       +-----------------------------------------------------------------------------+[0m
+[36m                    Pre-installation Verification...[0m
+[36m       +-----------------------------------------------------------------------------+[0m
+[36m       Verifying selections...done[0m
+[36m       Verifying requisites...done[0m
+[36m       Results...[0m
+[36m       [0m
+[36m       SUCCESSES[0m
+[36m       ---------[0m
+[36m         Filesets listed in this section passed pre-installation verification[0m
+[36m         and will be installed.[0m
+[36m       [0m
+[36m         Selected Filesets[0m
+[36m         -----------------[0m
+[36m         chef 12.6.0.1                               # The full stack of chef[0m
+[36m       [0m
+[36m         << End of Success Section >>[0m
+[36m       [0m
+[36m       +-----------------------------------------------------------------------------+[0m
+[36m                   BUILDDATE Verification ...[0m
+[36m       +-----------------------------------------------------------------------------+[0m
+[36m       Verifying build dates...done[0m
+[36m       FILESET STATISTICS [0m
+[36m       ------------------[0m
+[36m           1  Selected to be installed, of which:[0m
+[36m        1  Passed pre-installation verification[0m
+[36m         ----[0m
+[36m           1  Total to be installed[0m
+[36m       [0m
+[36m       +-----------------------------------------------------------------------------+[0m
+[36m                         Installing Software...[0m
+[36m       +-----------------------------------------------------------------------------+[0m
+[36m       [0m
+[36m       APPLYING software for:[0m
+[36m        chef 12.6.0.1[0m
+[36m       [0m
+[36m       Thank you for installing Chef![0m
+[36m       Finished processing all filesets.  (Total time:  39 secs).[0m
+[36m       [0m
+[36m       +-----------------------------------------------------------------------------+[0m
+[36m                                Summaries:[0m
+[36m       +-----------------------------------------------------------------------------+[0m
+[36m       [0m
+[36m       Installation Summary[0m
+[36m       --------------------[0m
+[36m       Name                        Level           Part        Event       Result[0m
+[36m       -------------------------------------------------------------------------------[0m
+[36m       chef                        12.6.0.1        USR         APPLY       SUCCESS    [0m
+[36m          12.6.0.1        ROOT        APPLY       SUCCESS    [0m
+[36m       Transferring files to <default-aix-71>[0m
+[36m       Starting Chef Client, version 12.6.0[0m
+[36m       Creating a new client identity for default-aix-71 using the validator key.[0m
+[36m       resolving cookbooks for run list: ["aixbase::default"][0m
+[36m       Synchronizing Cookbooks:[0m
+[36m         - aixbase (0.1.0)[0m
+[36m         - aix (0.1.0)[0m
+[36m       Compiling Cookbooks...[0m
+[36m       Converging 15 resources[0m
+[36m       Recipe: aixbase::default[0m
+[36m         * aix_toolboxpackage[unzip] action install[0m
+[36m           * remote_file[/tmp/kitchen/cache/unzip-5.51-1.aix5.1.ppc.rpm] action create[0m
+[36m             - create new file /tmp/kitchen/cache/unzip-5.51-1.aix5.1.ppc.rpm[0m
+[36m             - update content in file /tmp/kitchen/cache/unzip-5.51-1.aix5.1.ppc.rpm from none to 1c0445[0m
+[36m             (new content is binary, diff output suppressed)[0m
+[36m           * rpm_package[unzip] action install[0m
+[36m             - install version 5.51-1 of package unzip[0m
+[36m         [0m
+[36m         * aix_toolboxpackage[less] action install[0m
+[36m           * remote_file[/tmp/kitchen/cache/less-382-1.aix5.1.ppc.rpm] action create[0m
+[36m       - create new file /tmp/kitchen/cache/less-382-1.aix5.1.ppc.rpm[0m
+[36m             - update content in file /tmp/kitchen/cache/less-382-1.aix5.1.ppc.rpm from none to b91b2b[0m
+[36m       (new content is binary, diff output suppressed)[0m
+[36m       [0m
+[36m             - install version 382-1 of package less[0m
+[36m         [0m
+[36m         * aix_toolboxpackage[bash] action install[0m
+[36m           * remote_file[/tmp/kitchen/cache/bash-4.2-3.aix6.1.ppc.rpm] action create[0m
+[36m             - create new file /tmp/kitchen/cache/bash-4.2-3.aix6.1.ppc.rpm[0m
+[36m             - update content in file /tmp/kitchen/cache/bash-4.2-3.aix6.1.ppc.rpm from none to fc5c4e[0m
+[36m             (new content is binary, diff output suppressed)[0m
+[36m           * rpm_package[bash] action install (up to date)[0m
+[36m         [0m
+[36m         * aix_inittab[webserverstart] action remove (up to date)[0m
+[36m         * aix_tcpservice[inetd] action disable[0m
+[36m           - disable TCP/IP service[0m
+[36m         * aix_tcpservice[snmpd] action disable (up to date)[0m
+[36m         * aix_tcpservice[hostmibd] action disable (up to date)[0m
+[36m         * aix_tcpservice[snmpmibd] action disable (up to date)[0m
+[36m         * aix_tcpservice[aixmibd] action disable (up to date)[0m
+[36m         * aix_tcpservice[writesrv] action disable (up to date)[0m
+[36m         * aix_tcpservice[qdaemon] action disable (up to date)[0m
+[36m         * aix_tcpservice[xntpd] action enable[0m
+[36m           - enable TCP/IP service[0m
+[36m         * aix_subserver[telnet] action disable (up to date)[0m
+[36m         * aix_subserver[ftp] action disable (up to date)[0m
+[36m         * execute[chuser login=false root] action run (skipped due to not_if)[0m
+[36m       [0m
+[36m       Running handlers:[0m
+[36m       Running handlers complete[0m
+[36m       Chef Client finished, 10/21 resources updated in 23 seconds[0m
+[36m       Finished converging <default-aix-71> (1m52.99s).[0m
+[36m-----> Setting up <default-aix-71>...[0m
+[36m       Finished setting up <default-aix-71> (0m0.00s).[0m
+[36m-----> Verifying <default-aix-71>...[0m
+[36m       Preparing files for transfer[0m
+[36m       Transferring files to <default-aix-71>[0m
+[36m       Finished verifying <default-aix-71> (0m0.00s).[0m
+[36m-----> Destroying <default-aix-71>...[0m
+D, [2016-01-14T00:46:47.738041 #64450] DEBUG -- : [SSH] opening connection to root@172.31.10.23:22<{:password=>"fake", :compression=>"none"}>
+I, [2016-01-14T00:46:49.022337 #64450]  INFO -- : Invoking command sudo stopwpar sink-thinker-658cc4
+I, [2016-01-14T00:48:10.057644 #64450]  INFO -- : Invoking command rmwpar -F -v sink-thinker-658cc4
+[36m       Finished destroying <default-aix-71> (1m34.53s).[0m
+[36m       Finished testing <default-aix-71> (9m32.84s).[0m
+-----> Kitchen is finished. (9m33.33s)
+zlib(finalizer): the stream was freed prematurely.
+[34m[1mborkbork(B[m [1m~/devel/gh/juliandunn/aixbase(B[m [35m((B[m[32mmaster *%[35m)(B[m$ exit
+
