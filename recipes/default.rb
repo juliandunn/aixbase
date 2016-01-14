@@ -62,5 +62,6 @@ end
 # Disable root logins - must su
 execute 'chuser login=false root' do
   only_if 'lsuser -a login root | grep true'
+  not_if { node['virtualization']['wpar_no'] }
   action :run
 end
