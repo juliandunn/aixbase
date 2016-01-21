@@ -204,6 +204,4 @@ I, [2016-01-14T00:48:10.057644 #64450]  INFO -- : Invoking command rmwpar -F -v 
 [36m       Finished destroying <default-aix-71> (1m34.53s).[0m
 [36m       Finished testing <default-aix-71> (9m32.84s).[0m
 -----> Kitchen is finished. (9m33.33s)
-zlib(finalizer): the stream was freed prematurely.
-[34m[1mborkbork(B[m [1m~/devel/gh/juliandunn/aixbase(B[m [35m((B[m[32mmaster *%[35m)(B[m$ exit
 
